@@ -1,15 +1,12 @@
-version: "2"
+version: "3"
 services:
-  mongo-pio:
-    image: mongo:latest
-    container_name: mongo
-    restart: always
-    ports:
-      - "27017:27018"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.01'
-          memory: 10M
-        reservations:
-          memory: 5M
+    mongodb-pio:
+        image: mongo:latest
+        container_name: "mongodb-pio"
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+        volumes:
+          - ./data/db:/data/db
+        ports:
+            - 27018:27017
