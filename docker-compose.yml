@@ -6,4 +6,10 @@ services:
     restart: always
     ports:
       - "27017:27018"
-    mem_limit: 10G
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 10M
+        reservations:
+          memory: 5M
