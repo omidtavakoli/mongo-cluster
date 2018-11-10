@@ -1,4 +1,4 @@
-ersion: "2.4"
+ersion: "3"
 services:
     mongodb-pio:
         image: mongo:latest
@@ -9,7 +9,7 @@ services:
         volumes:
           - ./data/db:/data/db
         ports:
-            - 27020:27017
+            - 27027:27017
         deploy:
           resources:
             limits:
