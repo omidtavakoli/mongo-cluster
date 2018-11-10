@@ -1,13 +1,13 @@
 version: "2.2"
 services:
-    mongodb-pio:
+    mongopio:
         image: mongo:latest
-        container_name: "mongodb-pio"
+        container_name: "mongopio"
         environment:
           - MONGO_DATA_DIR=/data/db
           - MONGO_LOG_DIR=/dev/logs
         volumes:
           - ./data/db:/data/db
         ports:
-            - 27027:27017
+            - 27028:27017
         mem_limit: 8192m
