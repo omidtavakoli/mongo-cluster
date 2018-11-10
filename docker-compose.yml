@@ -1,18 +1,13 @@
-version: "3"
+version: "2.2"
 services:
     mongodb-pio:
         image: mongo:latest
         container_name: "mongodb-pio"
         environment:
           - MONGO_DATA_DIR=/data/db
-          - MONGO_LOG_DIR=/dev/null
+          - MONGO_LOG_DIR=/dev/logs
         volumes:
           - ./data/db:/data/db
         ports:
             - 27027:27017
-        deploy:
-          resources:
-            limits:
-              memory: 10G
-            reservations:
-              memory: 2G
+        mem_limit: 8192m
