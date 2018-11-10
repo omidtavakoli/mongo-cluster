@@ -1,16 +1,9 @@
-version: "3"
+version: "2"
 services:
-  mongo:
+  mongo-pio:
     image: mongo:latest
     container_name: mongo
     restart: always
     ports:
       - "27017:27018"
-    deploy:
-      resources:
-        limits:
-          cpus: '0.50'
-          memory: 10M
-        reservations:
-          cpus: '0.25'
-          memory: 5M
+    mem_limit: 10G
