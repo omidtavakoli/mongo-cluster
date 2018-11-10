@@ -1,4 +1,4 @@
-version: "3"
+ersion: "2.4"
 services:
     mongodb-pio:
         image: mongo:latest
@@ -9,4 +9,10 @@ services:
         volumes:
           - ./data/db:/data/db
         ports:
-            - 27018:27017
+            - 27020:27017
+        deploy:
+          resources:
+            limits:
+              memory: 10G
+            reservations:
+              memory: 2G
