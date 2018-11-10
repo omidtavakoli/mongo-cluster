@@ -3,6 +3,7 @@ services:
     mongopio:
         image: mongo:latest
         container_name: "mongopio"
+        restart: always
         environment:
           - MONGO_DATA_DIR=/data/db
           - MONGO_LOG_DIR=/dev/logs
